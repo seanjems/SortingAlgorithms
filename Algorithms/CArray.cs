@@ -63,19 +63,21 @@ namespace Algorithms
             for (int outer = 0; outer <= upper; outer++)
             {
                 min = outer;
-                for (int inner = outer+1; inner <=outer; inner++)
+                for (int inner = outer + 1; inner <= upper; inner++)
                 {
-                    if (arr[inner]<arr[outer])
+                    if (arr[inner] < arr[min])
                     {
                         min = inner;
                     }
-                    temp = arr[outer];
-                    arr[inner] = arr[min];
-                    arr[min] = temp;
 
-                    Console.WriteLine("");
-                    this.DisplayElements();
                 }
+                temp = arr[outer];
+                arr[outer] = arr[min];
+                arr[min] = temp;
+
+                Console.WriteLine("");
+                this.DisplayElements();
+
             }
         }
     }
